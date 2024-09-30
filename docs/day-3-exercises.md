@@ -11,9 +11,9 @@
 
 - [ ] Add the following environment variable:
 
-      ```
-      SECRET_PASSWORD=opensesame
-      ```
+```
+SECRET_PASSWORD=opensesame
+```
 
 - [ ] Test, commit and push!
 
