@@ -13,8 +13,16 @@
   </licenses>
   <properties></properties>
   <dependencies>
+
+
     <!-- TODO: Add the picocli dependency -->
     <!-- https://tech-docs.corndel.com/java/making-a-cli.html#installing-picocli -->
+
+    <dependency>
+      <groupId>com.github.tomas-langer</groupId>
+      <artifactId>chalk</artifactId>
+      <version>1.0.2</version>
+    </dependency>
 
     <dependency>
       <groupId>com.konghq</groupId>
