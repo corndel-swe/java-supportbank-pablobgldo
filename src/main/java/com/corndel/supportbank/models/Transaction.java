@@ -14,4 +14,30 @@ public class Transaction {
         this.narrative = narrative;
         this.amount = amount;
     }
+
+    public String getDate() {
+        return this.date;
+    }
+
+    public String getFrom() {
+        return this.from;
+    }
+
+    public String getTo() {
+        return this.to;
+    }
+
+    public String getNarrative() {
+        return this.narrative;
+    }
+
+    public double getAmount() {
+        return this.amount;
+    }
+
+    public String getAll() {
+        return "Date: " + date + ". From: " + from + ". To: " + to + ". Narrative: " + narrative + ". Amount: " + amount + ".";
+    }
+
+
 }
