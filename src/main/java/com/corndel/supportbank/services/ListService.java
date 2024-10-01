@@ -23,7 +23,7 @@ public class ListService implements Runnable {
         TransactionReader transactionReader = new TransactionReader();
         List<Transaction> transactions = transactionReader.readTransactions(filename);
 
-        transactions.stream().filter(x -> x.getFrom().equalsIgnoreCase(person)|| x.getTo().equalsIgnoreCase(person)).forEach(x ->
+        transactions.stream().filter(x -> x.getFrom().equalsIgnoreCase(person) || x.getTo().equalsIgnoreCase(person)).forEach(x ->
                 System.out.println(x.getAll()));
     }
 }
