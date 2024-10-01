@@ -3,10 +3,11 @@ package com.corndel.supportbank;
 import com.corndel.supportbank.controllers.BillController;
 import com.corndel.supportbank.controllers.ConvertController;
 import com.corndel.supportbank.controllers.TaxController;
+import com.corndel.supportbank.controllers.TransactionController;
 import com.github.tomaslanger.chalk.Chalk;
 import picocli.CommandLine;
 
-@CommandLine.Command(name = "supportbank", subcommands = {BillController.class, ConvertController.class, TaxController.class})
+@CommandLine.Command(name = "supportbank", subcommands = {BillController.class, ConvertController.class, TaxController.class, TransactionController.class})
 public class SupportBank implements Runnable {
 
   public static void main(String[] args) {
