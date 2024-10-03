@@ -37,7 +37,7 @@ public class Postman {
     // TODO: Post the Message object to the Postman Echo API
     var response = Unirest
             .post(url)
-            .header(" Content-Type", "application/json")
+            .header("Content-Type", "application/json")
             .body(message)
             .asString();
 

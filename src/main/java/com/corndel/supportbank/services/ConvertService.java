@@ -19,14 +19,6 @@ public class ConvertService implements Runnable {
     @Parameters(index = "2")
     private String to;
 
-    private static final Map<String, Double> rates = new HashMap<>();
-
-    static {
-        rates.put("USD", 1.0);
-        rates.put("GBP", 0.75);
-        rates.put("EUR", 0.85);
-    }
-
     @Override
     public void run() {
 
@@ -41,8 +33,9 @@ public class ConvertService implements Runnable {
     }
 
     private Currency convertCurrency(Currency fromCurrency, String to) {
-        double fromRate = rates.get(fromCurrency.getCurrency());
-        double toRate = rates.get(to);
+        RatesAPI ratesAPI = new RatesAPI();
+        double fromRate = ratesAPI.getRate(fromCurrency.getCurrency());
+        double toRate = ratesAPI.getRate(to);
         double convertedAmount = fromCurrency.getAmount() * (toRate / fromRate);
         return new Currency(convertedAmount, to);
     }
