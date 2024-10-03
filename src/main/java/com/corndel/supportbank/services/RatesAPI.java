@@ -5,7 +5,6 @@ import io.github.cdimascio.dotenv.Dotenv;
 import kong.unirest.Unirest;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import java.util.Map;
 
 public class RatesAPI {
 
@@ -22,12 +21,9 @@ public class RatesAPI {
                     .asString();
 
             String json = response.getBody();
-
             ObjectMapper mapper = new ObjectMapper();
             JsonNode rootNode = mapper.readTree(json);
-            JsonNode rates = rootNode.path("rates");
-
-            return rates;
+                return rootNode.path("rates");
 
         } catch (Exception e) {
             System.out.println("Oh no, an error occurred:" + e);;
@@ -40,8 +36,7 @@ public class RatesAPI {
         try {
             JsonNode rates = getRates();
             JsonNode rate = rates.get(currency);
-
-            return rate.asDouble();
+                return rate.asDouble();
 
         } catch (Exception e) {
             System.out.println("Oh no, an error occurred:" + e);;
