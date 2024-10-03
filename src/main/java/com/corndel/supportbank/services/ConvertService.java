@@ -4,8 +4,7 @@ package com.corndel.supportbank.services;
 import com.corndel.supportbank.models.Currency;
 import picocli.CommandLine.Command;
 import picocli.CommandLine.Parameters;
-import java.util.HashMap;
-import java.util.Map;
+
 
 @Command(name = "convert")
 public class ConvertService implements Runnable {

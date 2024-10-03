@@ -5,9 +5,11 @@ import io.github.cdimascio.dotenv.Dotenv;
 import kong.unirest.Unirest;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import java.util.Map;
+
 public class RatesAPI {
 
-    public double getRate(String currency) {
+    public JsonNode getRates() {
 
         try {
             Dotenv dotenv = Dotenv.load();
@@ -24,6 +26,19 @@ public class RatesAPI {
             ObjectMapper mapper = new ObjectMapper();
             JsonNode rootNode = mapper.readTree(json);
             JsonNode rates = rootNode.path("rates");
+
+            return rates;
+
+        } catch (Exception e) {
+            System.out.println("Oh no, an error occurred:" + e);;
+        }
+        return null;
+    }
+
+    public double getRate(String currency) {
+
+        try {
+            JsonNode rates = getRates();
             JsonNode rate = rates.get(currency);
 
             return rate.asDouble();
